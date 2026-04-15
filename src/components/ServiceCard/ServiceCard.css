@@ -1,0 +1,111 @@
+.service-card {
+  display: flex;
+  flex-direction: column;
+  padding: 36px 32px;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--card-color, var(--accent));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(232, 160, 69, 0.2);
+}
+
+.service-card:hover::before {
+  transform: scaleX(1);
+}
+
+.service-card__icon-wrap {
+  width: 60px;
+  height: 60px;
+  background: color-mix(in srgb, var(--card-color, var(--accent)) 12%, transparent);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--card-color, var(--accent));
+  margin-bottom: 24px;
+  transition: var(--transition);
+}
+
+.service-card:hover .service-card__icon-wrap {
+  background: var(--card-color, var(--accent));
+  color: var(--white);
+}
+
+.service-card__title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+.service-card__description {
+  font-size: 0.95rem;
+  color: var(--text-medium);
+  line-height: 1.7;
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.service-card__features {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.service-card__features li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  color: var(--text-medium);
+}
+
+.service-card__features li i {
+  color: var(--success);
+  font-size: 0.75rem;
+  flex-shrink: 0;
+}
+
+.service-card__cta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--card-color, var(--accent));
+  margin-top: auto;
+  transition: var(--transition-fast);
+}
+
+.service-card__cta i {
+  transition: transform 0.2s ease;
+}
+
+.service-card:hover .service-card__cta i {
+  transform: translateX(5px);
+}
