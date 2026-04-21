@@ -107,7 +107,7 @@ function Footer() {
           <p>© {year} Fido Car Rental & General Supply. All rights reserved.</p>
           <p className="dev-credit">
             Designed &amp; Developed by{' '}
-            <a href="https://yourportfolio.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://igihozogady-portfolio.netlify.app/" target="_blank" rel="noopener noreferrer">
               Igihozo Gady
             </a>
           </p>

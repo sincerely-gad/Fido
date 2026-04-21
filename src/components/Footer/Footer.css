@@ -222,15 +222,16 @@
 }
 
 .dev-credit a {
-  color: #888;
+  color: var(--white);
+  font-weight: 800;
   text-decoration: none;
   transition: color 0.3s ease, opacity 0.3s ease;
 }
 
 .dev-credit a:hover {
-  color: #ccc;
+  color: var(--accent-light);
   text-decoration: underline;
-  opacity: 0.9;
+  opacity: 1;
 }
 
 /* Responsive */
