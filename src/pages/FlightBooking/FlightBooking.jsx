@@ -3,7 +3,7 @@ import HeroSection from '../../components/HeroSection/HeroSection'
 import SectionTitle from '../../components/SectionTitle/SectionTitle'
 import CTA from '../../components/CTA/CTA'
 import './FlightBooking.css'
-import { CONTACT_EMAIL, sendEmailRequest } from '../../utils/email'
+import { CONTACT_EMAIL, getEmailSendErrorMessage, sendEmailRequest } from '../../utils/email'
 
 const services = [
   {
@@ -109,7 +109,7 @@ function FlightBooking() {
       })
       setSubmitted(true)
     } catch (err) {
-      setError(err?.text || err?.message || 'Something went wrong while sending your flight inquiry. Please try again.')
+      setError(getEmailSendErrorMessage(err))
     } finally {
       setLoading(false)
     }

@@ -71,19 +71,16 @@ const testimonials = [
     name: 'James Rutare',
     role: 'Business Traveler',
     text: 'Fido made my trip to Rwanda seamless. The car was spotless, the driver was professional, and the team responded instantly on WhatsApp. Highly recommend!',
-    avatar: 'https://i.pravatar.cc/80?img=11',
   },
   {
     name: 'Sophie Nkurunziza',
     role: 'Expat — Kigali',
     text: "Found my apartment in Kimihurura through Fido's real estate team. They understood exactly what I needed and arranged viewings within 24 hours.",
-    avatar: 'https://i.pravatar.cc/80?img=47',
   },
   {
     name: 'David Osei',
     role: 'Tour Operator — Ghana',
     text: 'We booked 12 cars and handled group flights through Fido for a corporate retreat. Flawless coordination at a great price.',
-    avatar: 'https://i.pravatar.cc/80?img=33',
   },
 ]
 
@@ -277,7 +274,9 @@ function Home() {
                 </div>
                 <p className="home__testimonial-text">"{t.text}"</p>
                 <div className="home__testimonial-author">
-                  <img src={t.avatar} alt={t.name} />
+                  <div className="home__testimonial-avatar" aria-hidden="true">
+                    <i className="fas fa-user"></i>
+                  </div>
                   <div>
                     <strong>{t.name}</strong>
                     <span>{t.role}</span>

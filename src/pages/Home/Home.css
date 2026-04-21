@@ -291,12 +291,18 @@
   gap: 12px;
 }
 
-.home__testimonial-author img {
+.home__testimonial-avatar {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-glow);
   border: 2px solid var(--accent-light);
+  color: var(--accent-dark);
+  font-size: 1rem;
+  flex-shrink: 0;
 }
 
 .home__testimonial-author strong {

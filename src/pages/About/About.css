@@ -311,32 +311,6 @@
   line-height: 1.6;
 }
 
-.about-team-card__socials {
-  display: flex;
-  gap: 8px;
-  padding: 12px 20px 18px;
-}
-
-.about-team-card__socials a {
-  width: 32px;
-  height: 32px;
-  background: var(--bg);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.85rem;
-  color: var(--text-medium);
-  transition: var(--transition-fast);
-  border: 1px solid var(--border-light);
-}
-
-.about-team-card__socials a:hover {
-  background: var(--primary);
-  color: var(--white);
-  border-color: var(--primary);
-}
-
 /* Responsive */
 @media (max-width: 1100px) {
   .about-stats__grid {

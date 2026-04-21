@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import './ContactForm.css'
-import { CONTACT_EMAIL, sendEmailRequest } from '../../utils/email'
+import { CONTACT_EMAIL, getEmailSendErrorMessage, sendEmailRequest } from '../../utils/email'
 
 const subjectLabels = {
   car: 'Car Rental Inquiry',
@@ -62,7 +62,7 @@ function ContactForm({ type = 'general', title, subtitle, initialData = {} }) {
       })
       setSubmitted(true)
     } catch (err) {
-      setError(err?.text || err?.message || 'Something went wrong while sending your message. Please try again.')
+      setError(getEmailSendErrorMessage(err))
     } finally {
       setLoading(false)
     }

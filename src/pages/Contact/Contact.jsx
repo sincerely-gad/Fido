@@ -4,12 +4,15 @@ import SectionTitle from '../../components/SectionTitle/SectionTitle'
 import ContactForm from '../../components/ContactForm/ContactForm'
 import './Contact.css'
 
+const officeMapUrl = 'https://www.google.com/maps/place/1%C2%B059%2703.2%22S+30%C2%B006%2718.4%22E/@-1.984209,30.1025441,17z/data=!3m1!4b1!4m4!3m3!8m2!3d-1.984209!4d30.105119?hl=en&entry=ttu&g_ep=EgoyMDI2MDQxNS4wIKXMDSoASAFQAw%3D%3D'
+const instagramUrl = 'https://www.instagram.com/fidocarrental__?igsh=YWZkZDNuMDNlN3Mw'
+
 const contactInfo = [
   {
     icon: 'fas fa-map-marker-alt',
     title: 'Our Office',
-    lines: ['KG 7 Ave, Nyarutarama', 'Kigali, Rwanda'],
-    link: null,
+    lines: ['1°59\'03.2"S 30°06\'18.4"E', 'Kigali, Rwanda'],
+    link: officeMapUrl,
   },
   {
     icon: 'fas fa-phone',
@@ -135,16 +138,9 @@ function Contact() {
             <div className="contact-socials">
               <h5>Follow Us</h5>
               <div className="contact-socials__links">
-                {[
-                  { icon: 'fab fa-facebook-f', label: 'Facebook' },
-                  { icon: 'fab fa-instagram', label: 'Instagram' },
-                  { icon: 'fab fa-x-twitter', label: 'Twitter' },
-                  { icon: 'fab fa-linkedin-in', label: 'LinkedIn' },
-                ].map((s, i) => (
-                  <a key={i} href="#" aria-label={s.label} className="contact-social-btn">
-                    <i className={s.icon}></i>
-                  </a>
-                ))}
+                <a href={instagramUrl} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="contact-social-btn">
+                  <i className="fab fa-instagram"></i>
+                </a>
               </div>
             </div>
           </div>
@@ -158,7 +154,7 @@ function Contact() {
             <i className="fas fa-map-marker-alt"></i>
             <div className="contact-map__pin-info">
               <strong>Fido Premium Services</strong>
-              <span>KG 7 Ave, Nyarutarama, Kigali</span>
+              <span>1°59'03.2"S 30°06'18.4"E, Kigali</span>
             </div>
           </div>
         </div>

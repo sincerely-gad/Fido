@@ -194,10 +194,6 @@ function About() {
                   <span className="about-team-card__role">{member.role}</span>
                   <p>{member.bio}</p>
                 </div>
-                <div className="about-team-card__socials">
-                  <a href="#" aria-label="LinkedIn"><i className="fab fa-linkedin-in"></i></a>
-                  <a href="#" aria-label="Twitter"><i className="fab fa-x-twitter"></i></a>
-                </div>
               </div>
             ))}
           </div>

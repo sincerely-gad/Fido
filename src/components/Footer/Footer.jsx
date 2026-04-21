@@ -2,6 +2,9 @@ import { Link } from 'react-router-dom'
 import './Footer.css'
 import logoUrl from '../../../img/logo.jpeg'
 
+const officeMapUrl = 'https://www.google.com/maps/place/1%C2%B059%2703.2%22S+30%C2%B006%2718.4%22E/@-1.984209,30.1025441,17z/data=!3m1!4b1!4m4!3m3!8m2!3d-1.984209!4d30.105119?hl=en&entry=ttu&g_ep=EgoyMDI2MDQxNS4wIKXMDSoASAFQAw%3D%3D'
+const instagramUrl = 'https://www.instagram.com/fidocarrental__?igsh=YWZkZDNuMDNlN3Mw'
+
 function Footer() {
   const year = new Date().getFullYear()
 
@@ -32,12 +35,8 @@ function Footer() {
               Rwanda's trusted car rental, flight booking, and real estate company. One partner for all your travel and property needs.
             </p>
             <div className="footer__socials">
-              <a href="#" aria-label="Facebook" className="footer__social"><i className="fab fa-facebook-f"></i></a>
-              <a href="#" aria-label="Instagram" className="footer__social"><i className="fab fa-instagram"></i></a>
-              <a href="#" aria-label="Twitter / X" className="footer__social"><i className="fab fa-x-twitter"></i></a>
-              <a href="#" aria-label="LinkedIn" className="footer__social"><i className="fab fa-linkedin-in"></i></a>
-              <a href="https://wa.me/250788616618" aria-label="WhatsApp" className="footer__social footer__social--wa">
-                <i className="fab fa-whatsapp"></i>
+              <a href={instagramUrl} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="footer__social">
+                <i className="fab fa-instagram"></i>
               </a>
             </div>
           </div>
@@ -72,7 +71,9 @@ function Footer() {
             <ul className="footer__contact-list">
               <li>
                 <i className="fas fa-map-marker-alt"></i>
-                <span>KG 7 Ave, Nyarutarama<br />Kigali, Rwanda</span>
+                <a href={officeMapUrl} target="_blank" rel="noopener noreferrer">
+                  1°59'03.2"S 30°06'18.4"E<br />Kigali, Rwanda
+                </a>
               </li>
               <li>
                 <i className="fas fa-phone"></i>
