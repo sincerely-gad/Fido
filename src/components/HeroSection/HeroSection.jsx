@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import './HeroSection.css'
+import { WHATSAPP_URL } from '../../utils/whatsapp'
 
 function HeroSection({
   badge,
@@ -41,12 +42,13 @@ function HeroSection({
         {buttons.length > 0 && (
           <div className="hero__buttons">
             {buttons.map((btn, i) => {
-              const isExternal = btn.href?.startsWith('http')
+              const href = btn.href === 'whatsapp' ? WHATSAPP_URL : btn.href
+              const isExternal = href?.startsWith('http')
               if (isExternal) {
                 return (
                   <a
                     key={i}
-                    href={btn.href}
+                    href={href}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`btn btn-lg ${btn.variant || 'btn-primary'}`}

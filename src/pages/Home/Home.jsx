@@ -7,6 +7,7 @@ import CTA from '../../components/CTA/CTA'
 import SectionTitle from '../../components/SectionTitle/SectionTitle'
 import { cars } from '../../data/cars'
 import { properties } from '../../data/properties'
+import { WHATSAPP_URL } from '../../utils/whatsapp'
 import './Home.css'
 
 const services = [
@@ -100,7 +101,7 @@ function Home() {
         subtitle="Car rentals, flight booking assistance, and real estate — all curated for a seamless Rwanda experience. Trusted by thousands of locals, expats, and travelers."
         buttons={[
           { label: 'Explore Our Services', to: '/cars', variant: 'btn-primary', icon: 'fas fa-compass' },
-          { label: 'Chat on WhatsApp', href: 'https://wa.me/250788616618', variant: 'btn-whatsapp', icon: 'fab fa-whatsapp' },
+          { label: 'Chat on WhatsApp', href: 'whatsapp', variant: 'btn-whatsapp', icon: 'fab fa-whatsapp' },
         ]}
       >
         {/* Quick Stats Strip */}
@@ -222,7 +223,7 @@ function Home() {
               <Link to="/flights" className="btn btn-primary btn-lg">
                 <i className="fas fa-plane-departure"></i> Our Flight Services
               </Link>
-              <a href="https://wa.me/250788616618" target="_blank" rel="noopener noreferrer" className="btn btn-outline-white btn-lg">
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn btn-outline-white btn-lg">
                 <i className="fab fa-whatsapp"></i> Request Now
               </a>
             </div>
@@ -295,7 +296,7 @@ function Home() {
         subtitle="Whether you need a car for tomorrow, a flight next week, or a home this year — our team is ready to help. Contact us or send a quick WhatsApp message."
         buttons={[
           { label: 'Contact Us', to: '/contact', variant: 'btn-primary', icon: 'fas fa-envelope' },
-          { label: 'Chat on WhatsApp', href: 'https://wa.me/250788616618', variant: 'btn-whatsapp', icon: 'fab fa-whatsapp' },
+          { label: 'Chat on WhatsApp', href: 'whatsapp', variant: 'btn-whatsapp', icon: 'fab fa-whatsapp' },
         ]}
         variant="dark"
       />

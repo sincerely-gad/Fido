@@ -206,7 +206,7 @@ function About() {
         subtitle="Whether you need a car, a flight, or a property — Fido's team is ready to deliver with expertise and care."
         buttons={[
           { label: 'Contact Our Team', to: '/contact', variant: 'btn-primary', icon: 'fas fa-envelope' },
-          { label: 'Chat on WhatsApp', href: 'https://wa.me/250788616618', variant: 'btn-whatsapp', icon: 'fab fa-whatsapp' },
+          { label: 'Chat on WhatsApp', href: 'whatsapp', variant: 'btn-whatsapp', icon: 'fab fa-whatsapp' },
         ]}
         variant="dark"
       />

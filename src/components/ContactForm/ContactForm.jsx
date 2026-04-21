@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import './ContactForm.css'
 import { CONTACT_EMAIL, getEmailSendErrorMessage, sendEmailRequest } from '../../utils/email'
+import { WHATSAPP_URL } from '../../utils/whatsapp'
 
 const subjectLabels = {
   car: 'Car Rental Inquiry',
@@ -77,7 +78,7 @@ function ContactForm({ type = 'general', title, subtitle, initialData = {} }) {
         <h3>Message Received!</h3>
         <p>Your request was sent directly to {CONTACT_EMAIL}. Our team will contact you soon.</p>
         <a
-          href="https://wa.me/250788616618"
+          href={WHATSAPP_URL}
           target="_blank"
           rel="noopener noreferrer"
           className="btn btn-whatsapp"
@@ -186,7 +187,7 @@ function ContactForm({ type = 'general', title, subtitle, initialData = {} }) {
             )}
           </button>
           <a
-            href="https://wa.me/250788616618"
+            href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-whatsapp btn-lg"

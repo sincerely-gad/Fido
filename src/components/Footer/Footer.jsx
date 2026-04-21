@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import './Footer.css'
 import logoUrl from '../../../img/logo.jpeg'
+import { WHATSAPP_URL } from '../../utils/whatsapp'
 
 const officeMapUrl = 'https://www.google.com/maps/place/1%C2%B059%2703.2%22S+30%C2%B006%2718.4%22E/@-1.984209,30.1025441,17z/data=!3m1!4b1!4m4!3m3!8m2!3d-1.984209!4d30.105119?hl=en&entry=ttu&g_ep=EgoyMDI2MDQxNS4wIKXMDSoASAFQAw%3D%3D'
 const instagramUrl = 'https://www.instagram.com/fidocarrental__?igsh=YWZkZDNuMDNlN3Mw'
@@ -89,7 +90,7 @@ function Footer() {
               </li>
             </ul>
             <a
-              href="https://wa.me/250788616618"
+              href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-whatsapp btn-sm footer__wa-btn"
@@ -104,16 +105,18 @@ function Footer() {
       <div className="footer__bottom">
         <div className="container footer__bottom-inner">
           <p>© {year} Fido Car Rental & General Supply. All rights reserved.</p>
-          <div className="footer__bottom-links">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-          </div>
+          <p className="dev-credit">
+            Designed &amp; Developed by{' '}
+            <a href="https://yourportfolio.com" target="_blank" rel="noopener noreferrer">
+              Igihozo Gady
+            </a>
+          </p>
         </div>
       </div>
 
       {/* Floating WhatsApp */}
       <a
-        href="https://wa.me/250788616618"
+        href={WHATSAPP_URL}
         target="_blank"
         rel="noopener noreferrer"
         className="whatsapp-float"

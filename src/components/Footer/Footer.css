@@ -214,6 +214,25 @@
   color: var(--accent);
 }
 
+/* Dev Credit */
+.dev-credit {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.45);
+  margin: 0;
+}
+
+.dev-credit a {
+  color: #888;
+  text-decoration: none;
+  transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+.dev-credit a:hover {
+  color: #ccc;
+  text-decoration: underline;
+  opacity: 0.9;
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
   .footer__grid {

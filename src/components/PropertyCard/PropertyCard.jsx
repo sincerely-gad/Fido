@@ -1,7 +1,10 @@
+import { useEffect, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { Link } from 'react-router-dom'
 import './PropertyCard.css'
 
 function PropertyCard({ property }) {
+  const [isVideoOpen, setIsVideoOpen] = useState(false)
   const { title, location, type, status, bedrooms, bathrooms, area, image, video, badge } = property
   const propertyDetails = [
     `Property: ${title}`,
@@ -34,21 +37,79 @@ function PropertyCard({ property }) {
     'Additional notes:',
   ].join('\n')
 
+  useEffect(() => {
+    if (!isVideoOpen) return undefined
+
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        setIsVideoOpen(false)
+      }
+    }
+
+    document.body.style.overflow = 'hidden'
+    window.addEventListener('keydown', handleKeyDown)
+
+    return () => {
+      document.body.style.overflow = ''
+      window.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [isVideoOpen])
+
+  const openVideo = () => {
+    if (video) {
+      setIsVideoOpen(true)
+    }
+  }
+
+  const playPreview = (event) => {
+    event.currentTarget.querySelector('video')?.play()
+  }
+
+  const pausePreview = (event) => {
+    const preview = event.currentTarget.querySelector('video')
+    if (!preview) return
+
+    preview.pause()
+    preview.currentTime = 0
+  }
+
+  const handleVideoKeyDown = (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault()
+      openVideo()
+    }
+  }
+
   return (
     <div className="prop-card">
-      <div className="prop-card__image-wrap">
+      <div
+        className={`prop-card__image-wrap ${video ? 'prop-card__image-wrap--video' : ''}`}
+        role={video ? 'button' : undefined}
+        tabIndex={video ? 0 : undefined}
+        onClick={openVideo}
+        onKeyDown={video ? handleVideoKeyDown : undefined}
+        onMouseEnter={video ? playPreview : undefined}
+        onMouseLeave={video ? pausePreview : undefined}
+        onFocus={video ? playPreview : undefined}
+        onBlur={video ? pausePreview : undefined}
+        aria-label={video ? `Open full screen video for ${title}` : undefined}
+      >
         {video ? (
-          <video
-            src={video}
-            poster={image}
-            className="prop-card__image prop-card__video"
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            aria-label={title}
-          />
+          <>
+            <video
+              src={video}
+              poster={image}
+              className="prop-card__image prop-card__video"
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              aria-label={title}
+            />
+            <span className="prop-card__video-action" aria-hidden="true">
+              <i className="fas fa-expand"></i>
+            </span>
+          </>
         ) : (
           <img src={image} alt={title} className="prop-card__image" loading="lazy" />
         )}
@@ -104,6 +165,37 @@ function PropertyCard({ property }) {
           </div>
         </div>
       </div>
+
+      {isVideoOpen && createPortal(
+        <div
+          className="prop-card__video-modal"
+          role="dialog"
+          aria-modal="true"
+          aria-label={`${title} video`}
+          onClick={() => setIsVideoOpen(false)}
+        >
+          <button
+            type="button"
+            className="prop-card__video-close"
+            onClick={() => setIsVideoOpen(false)}
+            aria-label="Close video"
+          >
+            <i className="fas fa-times"></i>
+          </button>
+          <div className="prop-card__video-modal-content" onClick={(event) => event.stopPropagation()}>
+            <video
+              src={video}
+              poster={image}
+              className="prop-card__video-full"
+              controls
+              autoPlay
+              playsInline
+            />
+            <div className="prop-card__video-title">{title}</div>
+          </div>
+        </div>,
+        document.body
+      )}
     </div>
   )
 }

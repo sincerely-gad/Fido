@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import './Navbar.css'
 import logoUrl from '../../../img/logo.jpeg'
+import { WHATSAPP_URL } from '../../utils/whatsapp'
 
 const navLinks = [
   { path: '/', label: 'Home' },
@@ -73,7 +74,7 @@ function Navbar() {
         {/* Desktop Actions */}
         <div className="navbar__actions">
           <a
-            href="https://wa.me/250788616618"
+            href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="navbar__whatsapp"
@@ -118,7 +119,7 @@ function Navbar() {
         </ul>
         <div className="navbar__mobile-actions">
           <a
-            href="https://wa.me/250788616618"
+            href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-whatsapp btn-lg"

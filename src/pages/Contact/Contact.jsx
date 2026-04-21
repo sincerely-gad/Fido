@@ -2,6 +2,7 @@ import { useLocation } from 'react-router-dom'
 import HeroSection from '../../components/HeroSection/HeroSection'
 import SectionTitle from '../../components/SectionTitle/SectionTitle'
 import ContactForm from '../../components/ContactForm/ContactForm'
+import { WHATSAPP_URL } from '../../utils/whatsapp'
 import './Contact.css'
 
 const officeMapUrl = 'https://www.google.com/maps/place/1%C2%B059%2703.2%22S+30%C2%B006%2718.4%22E/@-1.984209,30.1025441,17z/data=!3m1!4b1!4m4!3m3!8m2!3d-1.984209!4d30.105119?hl=en&entry=ttu&g_ep=EgoyMDI2MDQxNS4wIKXMDSoASAFQAw%3D%3D'
@@ -123,7 +124,7 @@ function Contact() {
                 </div>
               </div>
               <a
-                href="https://wa.me/250788616618"
+                href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-whatsapp"
@@ -184,7 +185,7 @@ function Contact() {
           <div className="contact-faq__cta">
             <p>Still have questions?</p>
             <a
-              href="https://wa.me/250788616618"
+              href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-whatsapp btn-lg"

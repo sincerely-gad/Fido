@@ -36,7 +36,7 @@ function RealEstate() {
         subtitle="Homes, apartments, commercial properties, and land — we connect you with the right property at the right price. No hidden fees."
         buttons={[
           { label: 'Browse Listings', to: '#listings', variant: 'btn-primary', icon: 'fas fa-search' },
-          { label: 'WhatsApp Us', href: 'https://wa.me/250788616618', variant: 'btn-whatsapp', icon: 'fab fa-whatsapp' },
+          { label: 'WhatsApp Us', href: 'whatsapp', variant: 'btn-whatsapp', icon: 'fab fa-whatsapp' },
         ]}
       />
 
@@ -195,7 +195,7 @@ function RealEstate() {
         subtitle="Reach out and let our real estate specialists guide you. Whether buying, renting, or investing — we make it straightforward."
         buttons={[
           { label: 'Make an Inquiry', to: '/contact', variant: 'btn-primary', icon: 'fas fa-envelope' },
-          { label: 'Chat on WhatsApp', href: 'https://wa.me/250788616618', variant: 'btn-whatsapp', icon: 'fab fa-whatsapp' },
+          { label: 'Chat on WhatsApp', href: 'whatsapp', variant: 'btn-whatsapp', icon: 'fab fa-whatsapp' },
         ]}
         variant="dark"
       />

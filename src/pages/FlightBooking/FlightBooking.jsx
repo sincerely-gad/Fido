@@ -4,6 +4,7 @@ import SectionTitle from '../../components/SectionTitle/SectionTitle'
 import CTA from '../../components/CTA/CTA'
 import './FlightBooking.css'
 import { CONTACT_EMAIL, getEmailSendErrorMessage, sendEmailRequest } from '../../utils/email'
+import { WHATSAPP_URL } from '../../utils/whatsapp'
 
 const services = [
   {
@@ -126,7 +127,7 @@ function FlightBooking() {
         subtitle="We find the flights. We make the booking. You just show up at the airport. Domestic, international, group, or business — we handle it all."
         buttons={[
           { label: 'Request a Flight', to: '#inquiry', variant: 'btn-primary', icon: 'fas fa-paper-plane' },
-          { label: 'WhatsApp Us', href: 'https://wa.me/250788616618', variant: 'btn-whatsapp', icon: 'fab fa-whatsapp' },
+          { label: 'WhatsApp Us', href: 'whatsapp', variant: 'btn-whatsapp', icon: 'fab fa-whatsapp' },
         ]}
       />
 
@@ -247,7 +248,7 @@ function FlightBooking() {
               <h3>Inquiry Received!</h3>
               <p>Your flight request was sent directly to {CONTACT_EMAIL}. Our team will contact you soon.</p>
               <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap', marginTop: 8 }}>
-                <a href="https://wa.me/250788616618" target="_blank" rel="noopener noreferrer" className="btn btn-whatsapp btn-lg">
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn btn-whatsapp btn-lg">
                   <i className="fab fa-whatsapp"></i> Chat for Faster Response
                 </a>
                 <button className="btn btn-outline btn-lg" onClick={() => setSubmitted(false)}>
@@ -380,7 +381,7 @@ function FlightBooking() {
                 <button type="submit" className="btn btn-primary btn-lg" disabled={loading}>
                   {loading ? <><i className="fas fa-spinner fa-spin"></i> Sending…</> : <><i className="fas fa-paper-plane"></i> Send Email</>}
                 </button>
-                <a href="https://wa.me/250788616618" target="_blank" rel="noopener noreferrer" className="btn btn-whatsapp btn-lg">
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn btn-whatsapp btn-lg">
                   <i className="fab fa-whatsapp"></i> WhatsApp Instead
                 </a>
               </div>
@@ -405,7 +406,7 @@ function FlightBooking() {
         subtitle="Contact us via WhatsApp, phone, or the inquiry form above. Our team is available 7 days a week to help you plan your journey."
         buttons={[
           { label: 'Call Us Now', href: 'tel:+250788616618', variant: 'btn-white', icon: 'fas fa-phone' },
-          { label: 'Chat on WhatsApp', href: 'https://wa.me/250788616618', variant: 'btn-whatsapp', icon: 'fab fa-whatsapp' },
+          { label: 'Chat on WhatsApp', href: 'whatsapp', variant: 'btn-whatsapp', icon: 'fab fa-whatsapp' },
         ]}
         variant="dark"
       />

@@ -4,6 +4,7 @@ import CarCard from '../../components/CarCard/CarCard'
 import CTA from '../../components/CTA/CTA'
 import SectionTitle from '../../components/SectionTitle/SectionTitle'
 import { cars, carTypes, transmissionTypes } from '../../data/cars'
+import { WHATSAPP_URL } from '../../utils/whatsapp'
 import './CarRentals.css'
 
 const howItWorks = [
@@ -52,7 +53,7 @@ function CarRentals() {
         subtitle="From budget-friendly sedans to luxury SUVs — choose the perfect vehicle for your journey. Self-drive or with a professional driver."
         buttons={[
           { label: 'View Fleet', to: '#fleet', variant: 'btn-primary', icon: 'fas fa-car' },
-          { label: 'WhatsApp Us', href: 'https://wa.me/250788616618', variant: 'btn-whatsapp', icon: 'fab fa-whatsapp' },
+          { label: 'WhatsApp Us', href: 'whatsapp', variant: 'btn-whatsapp', icon: 'fab fa-whatsapp' },
         ]}
       />
 
@@ -63,7 +64,7 @@ function CarRentals() {
             <i className="fas fa-info-circle"></i>
             <span><strong>No online payment required.</strong> Submit a request and we'll confirm availability and pricing directly.</span>
           </div>
-          <a href="https://wa.me/250788616618" className="btn btn-whatsapp btn-sm" target="_blank" rel="noopener noreferrer">
+          <a href={WHATSAPP_URL} className="btn btn-whatsapp btn-sm" target="_blank" rel="noopener noreferrer">
             <i className="fab fa-whatsapp"></i> Quick Inquiry
           </a>
         </div>
@@ -211,7 +212,7 @@ function CarRentals() {
         subtitle="Contact us with your dates and preferred vehicle. We'll confirm availability and arrange everything for you."
         buttons={[
           { label: 'Send Booking Request', to: '/contact', variant: 'btn-primary', icon: 'fas fa-paper-plane' },
-          { label: 'Chat on WhatsApp', href: 'https://wa.me/250788616618', variant: 'btn-whatsapp', icon: 'fab fa-whatsapp' },
+          { label: 'Chat on WhatsApp', href: 'whatsapp', variant: 'btn-whatsapp', icon: 'fab fa-whatsapp' },
         ]}
         variant="dark"
       />
